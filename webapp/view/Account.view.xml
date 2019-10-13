@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" controllerName="ZSHN.HW3_Node_js.controller.Account">
+	<App>
+		<pages>
+			<sap.m.semantic:FullscreenPage xmlns:sap.m.semantic="sap.m.semantic" title="{i18n>DetailsTitle}" id="page6" showNavButton="true" navButtonPress="onNavigate">
+				<sap.m.semantic:content>
+					<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+						<f:content>
+							<Label text="{i18n>lbId}"/>
+							<Text id="accId" text="{account>/_id}"/>
+							<Label text="{i18n>lbName}"/>
+							<Text text="{account>/name}"/>
+							<Label text="{i18n>lbdepositAmount}"/>
+							<Text text="{account>/depositAmount}"/>
+							<Label text="{i18n>lbtypeContibution}"/>
+							<Text text="{account>/typeContibution}"/>
+							<Label text="{i18n>lbtypeUser}"/>
+							<Text text="{account>/typeUser}"/>
+							<Label text="{i18n>lbpin}"/>
+							<Text text="{account>/pin}"/>
+							<Label text="{i18n>lbdateCreate}"/>
+							<Text text="{account>/dateCreate}"/>
+						</f:content>
+					</f:SimpleForm>
+				</sap.m.semantic:content>
+				<sap.m.semantic:editAction>
+					<sap.m.semantic:EditAction id="edit" press="onEdit"/>
+				</sap.m.semantic:editAction>
+				<sap.m.semantic:customFooterContent>
+					<Button enabled="true" id="deleteButton" press="onDelete" text="Delete"/>
+				</sap.m.semantic:customFooterContent>
+			</sap.m.semantic:FullscreenPage>
+		</pages>
+	</App>
+</mvc:View>

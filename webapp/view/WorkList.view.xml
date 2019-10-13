@@ -1,0 +1,33 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZSHN.HW3_Node_js.controller.WorkList" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<sap.m.semantic:DetailPage xmlns:sap.m.semantic="sap.m.semantic" title="{i18n>TableTitle}" id="page1">
+					<sap.m.semantic:content>
+						<Table id="table" items="{accounts>/value}" updateFinished="onUpdateFinished">
+							<columns>
+								<Column>
+									<Text text="{i18n>lbName}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>lbdepositAmount}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation" press="onItemPress">
+									<cells>
+										<ObjectIdentifier title="{accounts>name}"/>
+										<ObjectNumber number="{accounts>depositAmount}" unit="{accounts>typeContibution}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</sap.m.semantic:content>
+					<sap.m.semantic:addAction>
+						<sap.m.semantic:AddAction tooltip="Add" id="action0" press="onAdd"/>
+					</sap.m.semantic:addAction>
+				</sap.m.semantic:DetailPage>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

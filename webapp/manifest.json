@@ -1,0 +1,137 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "ZSHN.HW3_Node_js",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "ZSHN.HW3_Node_js.view.WorkList",
+			"type": "XML",
+			"async": true,
+			"id": "WorkList"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZSHN.HW3_Node_js.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "ZSHN.HW3_Node_js.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteWorkList",
+					"pattern": "RouteWorkList",
+					"target": [
+						"TargetWorkList"
+					]
+				},
+				{
+					"name": "WorkList",
+					"pattern": "/",
+					"target": [
+						"TargetWorkList"
+					]
+				},
+				{
+					"name": "Add",
+					"pattern": "Account/create",
+					"target": [
+						"AddAccount"
+					]
+				},
+				{
+					"name": "Account",
+					"pattern": "Account/{id}",
+					"target": [
+						"Account"
+					]
+				},
+				{
+					"name": "Edit",
+					"pattern": "Account/{id}/edit",
+					"target": [
+						"AddAccount"
+					]
+				}
+			],
+			"targets": {
+				"TargetWorkList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "WorkList"
+				},
+				"Account": {
+					"viewType": "XML",
+					"viewName": "Account"
+				},
+				"AddAccount": {
+					"viewType": "XML",
+					"viewName": "AddAccount"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}
